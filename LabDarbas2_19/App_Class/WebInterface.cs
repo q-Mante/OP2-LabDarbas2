@@ -172,7 +172,6 @@ namespace LabDarbas2_19
                 Table5.Rows.Clear();
                 if (sessionTable5.Count != 0)
                 {
-                    // Populating Table5 and showing results at WebInterface
                     AddTableHeaderRow(Table5, "Parduotuvės pavadinimas", "Likutis", "Vertė \u20AC");
                     for (sessionTable5.Begin(); sessionTable5.Exists(); sessionTable5.Next())
                     {
