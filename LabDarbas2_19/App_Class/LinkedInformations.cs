@@ -48,7 +48,25 @@
 
         public void Remove(Information value)
         {
-            // fix
+            if (Head == null)
+            {
+                return;
+            }
+
+            if (Head.Value.Equals(value))
+            {
+                Head = Head.Address;
+            }
+            else
+            {
+                for (Node node1 = Head; node1 != null; node1 = node1.Address)
+                {
+                    if (node1.Address != null && node1.Address.Value.Equals(value))
+                    {
+                        node1.Address = node1.Address.Address;
+                    }
+                }
+            }
         }
 
         public void Sort()
