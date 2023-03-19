@@ -1,0 +1,98 @@
+﻿body
+{
+    font-family: Arial;
+    color: #312F2F;
+}
+
+.display
+{
+    width: 2500px;
+    padding-top: 15px;
+    margin: auto;
+}
+
+.display, .container1, .container2, .data2 {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    text-align: center;
+}
+
+#Button1
+{
+    width: 250px;
+}
+
+span #Label8
+{
+    padding-top: 15px;
+}
+
+#RegularExpressionValidator1, #RequiredFieldValidator1
+{
+    position: absolute;
+    top: 76px;
+}
+
+table, input {
+    margin: 15px;
+    margin: 0, auto, 0, auto;
+    text-align: center;
+}
+
+input
+{
+    border: 3px solid #D1CCDC;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+table
+{
+    border: 3px solid #312F2F !important;
+    border-radius: 25px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-top: hidden;
+    border-bottom: hidden;
+}
+
+td, th
+{
+    padding: 10px;
+    border: 1px solid #312F2F;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+}
+
+th
+{
+    border-top: none;
+}
+
+tr:last-child td
+{
+    border-bottom: none;
+}
+
+#Table1 tr:nth-child(odd)
+{
+    background-color: #787CFA;
+}
+
+#Table1 tr:nth-last-child(even)
+{
+    background-color: #FFED9D;
+}
+
+tr:nth-child(odd) 
+{
+    background-color: #787CFA;
+}
+
+tr:nth-last-child(odd) 
+{
+    background-color: #FFED9D;
+}
