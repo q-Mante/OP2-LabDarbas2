@@ -156,13 +156,17 @@
         }
 
         /// <summary>
-        /// 
+        /// Sets LinkedList Selected node to Selected node adresss
         /// </summary>
         public void Next()
         {
             Selected = Selected.Address;
         }
 
+        /// <summary>
+        /// Returns Selected node value
+        /// </summary>
+        /// <returns>Value</returns>
         public Information Get()
         {
             return Selected.Value;
