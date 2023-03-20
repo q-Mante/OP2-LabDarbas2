@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace LabDarbas2_19.App_Class
 {
+    /// <summary>
+    /// Class which holds information about shops
+    /// </summary>
     public class Shop
     {
         public string Name { get; private set; }
@@ -37,14 +40,25 @@ namespace LabDarbas2_19.App_Class
 
         private LinkedProducts AllProducts;
 
+        /// <summary>
+        /// Constructor for Shop class object which is null
+        /// </summary>
         public Shop() { }
 
+        /// <summary>
+        /// Constructor for Shop class object
+        /// </summary>
+        /// <param name="name">Initial name of shop</param>
         public Shop(string name)
         {
             Name = name;
             AllProducts = new LinkedProducts();
         }
 
+        /// <summary>
+        /// Find favorite product among all shop products
+        /// </summary>
+        /// <returns>Favorite product</returns>
         public Product FavoriteProduct()
         {
             Product favorite = new Product();
@@ -62,28 +76,63 @@ namespace LabDarbas2_19.App_Class
             return favorite;
         }
 
+        /// <summary>
+        /// Count of shop products
+        /// </summary>
+        /// <returns>Integer</returns>
         public int ProductsCount() => AllProducts.Count;
 
+        /// <summary>
+        /// Adds new product to shop
+        /// </summary>
+        /// <param name="product">Product class object</param>
         public void ProductsAdd(Product product) => AllProducts.Add(product);
 
+        /// <summary>
+        /// Sets LinkedProducts list selected node to head
+        /// </summary>
         public void ProductsBegin() => AllProducts.Begin();
 
+        /// <summary>
+        /// Checks if selected node exists
+        /// </summary>
+        /// <returns>True, if exists; otherwise false</returns>
         public bool ProductsExists() => AllProducts.Exists();
 
+        /// <summary>
+        /// Sets LinkedProducts list selected node to selected adresss
+        /// </summary>
         public void ProductsNext() => AllProducts.Next();
 
+        /// <summary>
+        /// Returns selected node value
+        /// </summary>
+        /// <returns>Product</returns>
         public Product ProductsGet() => AllProducts.Get();
 
+        /// <summary>
+        /// String representation of Shpp class object
+        /// </summary>
+        /// <returns>String</returns>
         public override string ToString()
         {
             return string.Format("| {0,-40} | {1,7} | {2,10} |", Name, AllStock, Value);
         }
 
+        /// <summary>
+        /// Checks if given Shop class object is the same as original
+        /// </summary>
+        /// <param name="obj">Object to which compare to</param>
+        /// <returns>True, if they are the same; otherwise false</returns>
         public override bool Equals(object obj)
         {
             return obj is Shop shop && Name.Equals(shop.Name);
         }
 
+        /// <summary>
+        /// Calculates HashCode of the Shop class object
+        /// </summary>
+        /// <returns>Integer</returns>
         public override int GetHashCode()
         {
             return 539060726 + EqualityComparer<string>.Default.GetHashCode(Name);

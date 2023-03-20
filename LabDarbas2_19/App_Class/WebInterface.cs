@@ -5,6 +5,11 @@ namespace LabDarbas2_19
 {
     public partial class WebInterface : System.Web.UI.Page
     {
+        /// <summary>
+        /// Tool for creating Table header row
+        /// </summary>
+        /// <param name="table">Table to which add the header row</param>
+        /// <param name="cellsHeaders">Cells with data to be in that row</param>
         protected void AddTableHeaderRow(Table table, params string[] cellsHeaders)
         {
             TableHeaderRow hRow = new TableHeaderRow();
@@ -16,6 +21,11 @@ namespace LabDarbas2_19
             table.Rows.Add(hRow);
         }
 
+        /// <summary>
+        /// Tool for creating Table row
+        /// </summary>
+        /// <param name="table">Table to which add the row</param>
+        /// <param name="cells">Cells with data to be in that row</param>
         protected void AddTableRow(Table table, params string[] cells)
         {
             TableHeaderRow row = new TableHeaderRow();
@@ -27,6 +37,9 @@ namespace LabDarbas2_19
             table.Rows.Add(row);
         }
 
+        /// <summary>
+        /// Saves users session data of visible content
+        /// </summary>
         protected void SessionSaveVisible()
         {
             Session["Label1.V"] = Label1.Visible;
@@ -46,12 +59,24 @@ namespace LabDarbas2_19
             Session["Table5.V"] = Table5.Visible;
         }
 
+        /// <summary>
+        /// Saves users session initial data
+        /// </summary>
+        /// <param name="shops">Initial data about shops</param>
+        /// <param name="informations">Initial data about products</param>
         protected void SessionSave1(LinkedShops shops, LinkedInformations informations)
         {
             Session["Table1"] = shops;
             Session["Table2"] = informations;
         }
 
+        /// <summary>
+        /// Saves users session calculated data
+        /// </summary>
+        /// <param name="favorites">Favorite product</param>
+        /// <param name="expires">LinkedList of products to nearly expire</param>
+        /// <param name="biggest">Shop with most amount of diverse products</param>
+        /// <param name="shops">LinkedList of shops which values are below specified value</param>
         protected void SessionSave2(LinkedInformations favorites, LinkedProducts expires, Shop biggest, LinkedShops shops)
         {
             Session["Table3"] = favorites;
@@ -60,6 +85,9 @@ namespace LabDarbas2_19
             Session["Table5"] = shops;
         }
 
+        /// <summary>
+        /// Loads users session data
+        /// </summary>
         protected void SessionLoad()
         {
             if (Session["Table1"] != null)

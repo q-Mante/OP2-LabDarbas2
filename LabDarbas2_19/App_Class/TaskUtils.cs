@@ -2,8 +2,16 @@
 
 namespace LabDarbas2_19.App_Class
 {
+    /// <summary>
+    /// Class which holds tools for manipulating/calculating data
+    /// </summary>
     public static class TaskUtils
     {
+        /// <summary>
+        /// Finds favorite products from each shop and stores them in LinkedList
+        /// </summary>
+        /// <param name="linkedShops">Storage</param>
+        /// <returns>Returns LinkedList of favorite products</returns>
         public static LinkedInformations FindFavorites(LinkedShops linkedShops)
         {
             LinkedInformations Favorites = new LinkedInformations();
@@ -16,6 +24,12 @@ namespace LabDarbas2_19.App_Class
             return Favorites;
         }
 
+        /// <summary>
+        /// Finds products which are going to expire in [days] days and stores them in LinkedList
+        /// </summary>
+        /// <param name="linkedShops">Storage</param>
+        /// <param name="days">Interval in which product will expire</param>
+        /// <returns>Returns LinkedList of products</returns>
         public static LinkedProducts FindProductsThatExpireIn(LinkedShops linkedShops, int days)
         {
             LinkedProducts Expires = new LinkedProducts();
@@ -32,6 +46,11 @@ namespace LabDarbas2_19.App_Class
             return Expires;
         }
 
+        /// <summary>
+        /// Finds shop which has the most amount of diverse products
+        /// </summary>
+        /// <param name="linkedShops">LinkedList of shops which are checked</param>
+        /// <returns>Shop with most amount of diverse products</returns>
         public static Shop FindShopWithBiggestAssortment(LinkedShops linkedShops)
         {
             Shop Biggest = new Shop();
@@ -48,6 +67,12 @@ namespace LabDarbas2_19.App_Class
             return Biggest;
         }
 
+        /// <summary>
+        /// Finds shops which values are below specified value
+        /// </summary>
+        /// <param name="linkedShops">LinkedList of shops which are checked</param>
+        /// <param name="maximumValue">Specified value</param>
+        /// <returns></returns>
         public static LinkedShops FindShopsThatAreBelowSpecifiedValue(LinkedShops linkedShops, float maximumValue)
         {
             LinkedShops Shops = new LinkedShops();

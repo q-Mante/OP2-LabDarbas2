@@ -3,6 +3,9 @@ using System.IO;
 
 namespace LabDarbas2_19.App_Class
 {
+    /// <summary>
+    /// Class which holds tools for reading/writting data
+    /// </summary>
     public static class InOutUtils
     {
         private const int CshopsSize = 114;
@@ -10,6 +13,11 @@ namespace LabDarbas2_19.App_Class
         private const int CexpiresSize = 64;
         private const int CshopsCharacteristicsSize = 67;
 
+        /// <summary>
+        /// Reads initial information about products
+        /// </summary>
+        /// <param name="fileName">File location</param>
+        /// <returns>LinkedList of product informations</returns>
         public static LinkedInformations ReadInformations(string fileName)
         {
             using (var reader = new StreamReader(fileName))
@@ -32,6 +40,12 @@ namespace LabDarbas2_19.App_Class
             }
         }
 
+        /// <summary>
+        /// Reads initial data about shops and their products
+        /// </summary>
+        /// <param name="fileName">File location</param>
+        /// <param name="linkedInformations">LinkedList of product information</param>
+        /// <returns>LinkedList of shops</returns>
         public static LinkedShops ReadShops(string fileName, LinkedInformations linkedInformations)
         {
             using (var reader = new StreamReader(fileName))
@@ -71,6 +85,12 @@ namespace LabDarbas2_19.App_Class
             }
         }
 
+        /// <summary>
+        /// Writes shops LinkedList to file in table format
+        /// </summary>
+        /// <param name="fileName">File location</param>
+        /// <param name="header">Header of table</param>
+        /// <param name="linkedShops">LinkedList of shops to write</param>
         public static void WriteShops(string fileName, string header, LinkedShops linkedShops)
         {
             using (var writer = new StreamWriter(fileName, true))
@@ -93,6 +113,12 @@ namespace LabDarbas2_19.App_Class
             }
         }
 
+        /// <summary>
+        /// Writes products informations LinkedList to file in table format
+        /// </summary>
+        /// <param name="fileName">File location</param>
+        /// <param name="header">Header of table</param>
+        /// <param name="linkedInformations">LinkedList of products informations to write</param>
         public static void WriteInformations(string fileName, string header, LinkedInformations linkedInformations)
         {
             using (var writer = new StreamWriter(fileName, true))
@@ -112,6 +138,12 @@ namespace LabDarbas2_19.App_Class
             }
         }
 
+        /// <summary>
+        /// Writes products informations LinkedList to file in table format using .ToStringExpire() method
+        /// </summary>
+        /// <param name="fileName">File location</param>
+        /// <param name="header">Header of table</param>
+        /// <param name="linkedProducts">LinkedList of products informations to write</param>
         public static void WriteExpires(string fileName, string header, LinkedProducts linkedProducts)
         {
             using (var writer = new StreamWriter(fileName, true))
@@ -131,6 +163,12 @@ namespace LabDarbas2_19.App_Class
             }
         }
 
+        /// <summary>
+        /// Writes shops LinkedList characteristics to file in table format
+        /// </summary>
+        /// <param name="fileName">File location</param>
+        /// <param name="header">Header of table</param>
+        /// <param name="linkedShops">LinkedList of shops to write</param>
         public static void WriteShopsCharacteristics(string fileName, string header, LinkedShops linkedShops)
         {
             using (var writer = new StreamWriter(fileName, true))
