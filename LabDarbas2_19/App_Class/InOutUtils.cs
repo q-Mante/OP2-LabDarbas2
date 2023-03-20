@@ -3,7 +3,7 @@ using System.IO;
 
 namespace LabDarbas2_19.App_Class
 {
-    public class InOutUtils
+    public static class InOutUtils
     {
         private const int CshopsSize = 114;
         private const int CinformationsSize = 72;

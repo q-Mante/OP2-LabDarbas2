@@ -2,7 +2,7 @@
 
 namespace LabDarbas2_19.App_Class
 {
-    public class TaskUtils
+    public static class TaskUtils
     {
         public static LinkedInformations FindFavorites(LinkedShops linkedShops)
         {
